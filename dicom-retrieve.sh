@@ -8,7 +8,12 @@ if [ "$1" = "" ] || [ "$2" = "" ] || [ "$3" = "" ] ; then
 fi
 destdir="${WORK_DIR}/${1}"
 if [ -d "${destdir}" ]; then
-    echo "Already exists:$destdir"
+    echo "Already exists:$destdir" >&2
+    exit 1
+fi
+if [ "x${ARCH_DIR}" = 'x' ]
+then
+    echo "Set ARCH_DIR in ./base.environments" >&2
     exit 1
 fi
 zipfile="${ARCH_DIR}/${2}"
