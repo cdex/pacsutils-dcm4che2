@@ -1,0 +1,30 @@
+## CMD_BASE: e.g. `/path/to/dcm4che-2.0.28/bin`
+CMD_BASE=/path/to/dcm4che-2.0.28/bin
+
+## LOGS_DIR: log file directory
+LOGS_DIR=/path/to/pacsutils-log
+
+## WORK_DIR: working directory
+WORK_DIR=/path/to/pacsutils-work
+
+## ARCH_DIR: archiving directory
+ARCH_DIR=/path/to/pacsutils-arch
+
+## LOCAL_CMD: this directory
+LOCAL_CMD=/path/to/pacsutils
+
+## SEND_AET: AE title, `@`, hostname or IP address, `:` and port number of the
+## remote DICOM node, which would send data to the `RETV_AET`
+SEND_AET=DCM4CHEE@localhost:11112
+
+## RETV_AET: AE title, `@`, hostname or IP address, `:` and port number of the
+## local DICOM node, to which the `SEND_AET` would send data
+RETV_AET=local_retrieve@localhost:11113
+
+## CALLING_AET: AE title of the local DICOM node, which would sed data to the
+## CALLED_AET
+CALLING_AET=ct16_01
+
+## CALLED_AET: AE title, `@`, hostname or IP address, `:` and port number of
+## the remote DICOM node, to which the `CALLING_AET` would send data
+CALLED_AET=DCM4CHEESTORE@localhost:11112
